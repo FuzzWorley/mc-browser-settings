@@ -16,10 +16,10 @@
     "start": "yarn run js:dev | yarn run styles:dev | yarn run browser-sync",
     "js:dev": "rollup -c --watch",
     "js:prod": "rollup -c --environment PROD:true",
-    "styles:dev": "node-sass assets/styles/main.scss dist/main.css --watch assets/styles",
+    "styles:dev": "node-sass assets/styles/ --output dist --watch assets/styles/*.scss",
     "styles:prod": "node-sass assets/styles/main.scss dist/main.css ; postcss 'dist/main.css' -o 'dist/main.css'",
     "browser-sync": "browser-sync start --server 'dist' --files 'dist' --ss 'public'",
-    "build": "yarn run js:prod && yarn run styles:prod",
+    "build": "rm -rf dist && yarn run js:prod && yarn run styles:prod",
     "test": "jest",
     "prepublish": "yarn run test && yarn run build"
   },
