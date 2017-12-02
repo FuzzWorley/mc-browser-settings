@@ -7,11 +7,13 @@ import eslint from 'rollup-plugin-eslint';
 import { minify } from 'uglify-js';
 
 const isProd = process.env.PROD;
-const moduleName = require('./package.json').config.moduleName;
 const plugins = [
   eslint(),
   json(),
-  babel({ exclude: 'node_modules/**' }),
+  babel({
+    exclude: 'node_modules/**',
+    plugins: ['external-helpers']
+  }),
   nodeResolve({ jsnext: true, main: true }),
   commonjs()
 ];
@@ -21,10 +23,11 @@ if (isProd) {
 }
 
 export default {
-  entry: 'lib/main.js',
-  format: 'umd',
-  moduleName,
+  input: 'assets/js/main.js',
   plugins,
-  dest: `dist/${moduleName}.js`,
+  output: {
+    file: `dist/bundle.js`,
+    format: 'umd'
+  },
   sourceMap: !isProd
 };
