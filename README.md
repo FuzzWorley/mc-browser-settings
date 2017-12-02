@@ -1,16 +1,26 @@
-### Rollup UMD Starter
-A super simple starter project for creating rollup UMD's.
+# Web Module Starter
+This is a generic starter project for creating a standalone web module with a javascript bundle and styles.
+
 #### Installation
 ```
-npm install
+yarn install
 ```
-Change "moduleName" in package.json to desired library name.
+Change "moduleName" in package.json to desired library name
+
 #### Usage
-Dev
+Development, starts a dev server and watches js/scss
 ```
-npm start
+yarn start
 ```
-Prod
+Production, builds the js and css
 ```
-npm run build
+yarn build
+```
+
+#### Testing
+We use Jest for testing. All you need to do is create a file named *.test.js and jest will run it.
+
+Run Jest tests. Tests will also run in the prepublish script.
+```
+yarn test
 ```
