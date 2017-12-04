@@ -1,6 +1,7 @@
 {
   "name": "rollup-umd",
   "author": "Andy Axton",
+  "private": true,
   "version": "1.0.0",
   "description": "A simple starter for UMD libraries",
   "main": "dist/bundle.js",

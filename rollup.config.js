@@ -19,15 +19,16 @@ const plugins = [
   nodeResolve({ jsnext: true, main: true }),
   commonjs()
 ];
-const input = isProd
-  ? 'assets/js/main.js'
-  : ['assets/js/main.js', 'assets/js/preview.js']
 
 if (isProd) {
   plugins.push(uglify({}, minify));
 } else {
-  plugins.push(multiEntry())
+  plugins.unshift(multiEntry())
 }
+
+const input = isProd
+  ? 'assets/js/main.js'
+  : ['assets/js/main.js', 'assets/js/preview.js']
 
 export default {
   input,
