@@ -17,24 +17,23 @@ const plugins = [
     plugins: ['external-helpers']
   }),
   nodeResolve({ jsnext: true, main: true }),
-  multiEntry(),
   commonjs()
 ];
-const input = [
-  'assets/js/main.js'
-]
+const input = isProd
+  ? 'assets/js/main.js'
+  : ['assets/js/main.js', 'assets/js/preview.js']
 
 if (isProd) {
   plugins.push(uglify({}, minify));
 } else {
-  input.push('assets/js/preview.js')
+  plugins.push(multiEntry())
 }
 
 export default {
   input,
   plugins,
-  name,
   output: {
+    name,
     file: `dist/bundle.js`,
     format: 'umd'
   },
