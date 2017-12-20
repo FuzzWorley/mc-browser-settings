@@ -2,7 +2,7 @@
   "name": "@masterclass/mc-browser-settings",
   "author": "Chris Jordan",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A simple starter for UMD libraries",
   "main": "dist/bundle.js",
   "license": "MIT",
