@@ -1,6 +1,6 @@
 {
-  "name": "rollup-umd",
-  "author": "Andy Axton",
+  "name": "@masterclass/mc-browser-settings",
+  "author": "Chris Jordan",
   "private": true,
   "version": "1.0.0",
   "description": "A simple starter for UMD libraries",
@@ -11,7 +11,7 @@
     "url": "https://github.com/a-axton/rollup-umd"
   },
   "config": {
-    "moduleName": "Library"
+    "moduleName": "gon"
   },
   "scripts": {
     "start": "yarn run js:dev | yarn run styles:dev | yarn run browser-sync",
