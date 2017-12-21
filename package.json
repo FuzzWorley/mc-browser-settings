@@ -1,6 +1,7 @@
 {
   "name": "@masterclass/mc-browser-settings",
   "author": "Chris Jordan",
+  "private": true,
   "version": "0.0.1",
   "description": "NPM module for our browser_settings coffeescript file",
   "main": "dist/bundle.js",
