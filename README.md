@@ -16,7 +16,7 @@ Production, builds the js and css
 ```
 yarn build
 ```
-
+ 
 ### Testing
 We use Jest for testing. All you need to do is create a file named *.test.js and jest will run it.
 
