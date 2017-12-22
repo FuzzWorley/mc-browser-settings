@@ -36,7 +36,7 @@ An alternative to using `public/index.html` is to test your module inside of the
 4. Now in the masterclass repo, cd into the directory that has the `package.json` file you wish to test this module in. *Probably `vendor/assets` or just `/`*. Run `npm link @masterclass/mc-your-module-name`
 5. Import your module
     - es6: `import myModule from '@masterclass/mc-your-module-name'`
-    - coffeescript: `#= require @masterclass/mc-your-module-name/dist/main.js`
+    - coffeescript: `#= require @masterclass/mc-your-module-name/dist/bundle.js`
         - will be assigned to variable from `config.moduleName` setting
 6. Have `yarn start` running or run `yarn build`. Any changes made here should be linked to the main repo.
 
@@ -49,7 +49,7 @@ An alternative to using `public/index.html` is to test your module inside of the
 3. Set `config.moduleName` in `package.json`. Your module will be assigned to this variable when imported in rails/sprockets (not needed for webpack/es6)
 4. Commit all of your files and then run `npm version 0.0.0` or whatever version number you want to start with.
 5. Push your code! `git push -u origin master && git push origin master --tags`. This will push all of your code an create a release for `v0.0.0`
-6. Now you can add your module to any `package.json` as `"@masterclass/mc-your-module-name": "yankainsustries/mc-your-repo-name#0.0.0"`
+6. Now you can add your module to any `package.json` as `"@masterclass/mc-your-module-name": "yankaindustries/mc-your-repo-name#0.0.0"`
 7. Install your module with `yarn install`
 
 ## Updating your module
